@@ -9,6 +9,7 @@
 :root{
   --main-color: #19c8fa;
   --transparent-color: rgb(15 116 143 / 70%);
+  --section-padding: 100px;
 }
 html{
     scroll-behavior: smooth;
@@ -142,6 +143,49 @@ ul {
         color: white;
         font-size: 20px;
     }
+
+    /* start components */
+    .main-heading {
+      text-align:center;
+    }
+    .main-heading  h2 {
+      font-weight: normal;
+      font-size: 40px;
+      position: relative;
+      margin-bottom: 70px;
+      text-transform: uppercase;
+    }
+    .main-heading  h2::before {
+    position: absolute;
+    content: "";
+    background-color:#333;
+    width: 120px;
+    height: 2px;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+    .main-heading  h2::after {
+      position: absolute;
+      content: "";
+      background-color:white;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid #333;
+      bottom: -38px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    .main-heading  p {
+      width: 550px;
+      margin: 0 auto 100px;
+      max-width: 100%;
+      line-height: 2;
+      color: #777;
+    }
+    /* end components */
   /* end header */
 
   /* start landing section */
@@ -229,49 +273,10 @@ left:30px;
 
   /* start services section  */
   .services {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
   }
-  .services .main-heading {
-    text-align:center;
-  }
-  .services .main-heading  h2 {
-    font-weight: normal;
-    font-size: 40px;
-    position: relative;
-    margin-bottom: 70px;
-    text-transform: uppercase;
-  }
-  .services .main-heading  h2::before {
-  position: absolute;
-  content: "";
-  background-color:#333;
-  width: 120px;
-  height: 2px;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  }
-  .services .main-heading  h2::after {
-    position: absolute;
-    content: "";
-    background-color:white;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    border: 2px solid #333;
-    bottom: -38px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .services .main-heading  p {
-    width: 550px;
-    margin: 0 auto 100px;
-    max-width: 100%;
-    line-height: 2;
-    color: #777;
-  }
+  
   @media (min-width:768px){
   .services .services-container {
     display: grid;
@@ -310,8 +315,8 @@ margin-bottom: 30px;
 
   /* start design section */
 .design {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
   position: relative;
   height: 600px;
   background-image: url(../images/design-features.jpg);
@@ -358,5 +363,71 @@ position: relative;
 top: 1px;
 }
 
-
   /* end design section */
+
+  /* start portfolio section */
+
+  .portfolio {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+  }
+  
+  .portfolio .shuffle {
+    display: flex;
+    justify-content: center;
+}
+.portfolio li {
+  margin-right: 10px;
+  padding: 10px;
+}
+.portfolio .shuffle li.active {
+  background-color: var(--main-color);
+  color: white;
+}
+.portfolio .img-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+.portfolio .img-container .box {
+  overflow: hidden;
+  position: relative;
+}
+
+@media(min-width:767px){
+  .portfolio .img-container .box {
+    flex-basis: 50%;
+  }
+}
+@media(min-width:1199px){
+  .portfolio .img-container .box {
+    flex-basis: 25%;
+  }
+}
+.portfolio .img-container .box img{
+  transition: 0.3s;
+  max-width: 100%;
+}
+.portfolio .img-container .box .caption {
+  position: absolute;
+  left: 0;
+  padding: 20px;
+  background-color: white;
+  width: 100%;
+  transition: 0.3s;
+  bottom: -100%;
+}
+.portfolio .img-container .box:hover .caption {
+  bottom :0;
+}
+.portfolio .img-container .box:hover img{
+  transform: rotate(3deg) scale(1.1);
+}
+.portfolio .img-container .box .caption h4 {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.portfolio .img-container .box .caption p {
+  color: var(--main-color);
+}
+  /* end portfolio section */
