@@ -307,3 +307,56 @@ margin-bottom: 30px;
     margin-right: 50px;
   }
   /* end services section  */
+
+  /* start design section */
+.design {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
+  height: 600px;
+  background-image: url(../images/design-features.jpg);
+  background-size: cover;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+}
+.design .image , 
+.design .text {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width:767px){
+  .design .image {
+    display: none;
+  }
+}
+.design .image {
+  text-align: center;
+  bottom: -150px;
+}
+.design .text {
+  color :white;
+  background-color: var(--transparent-color);
+  padding: 50px;
+}
+.design .text h2 {
+  font-weight: normal;
+
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+.design .text ul li {
+  padding: 15px 0;
+}
+.design .text ul li::before {
+font-family: "Font Awesome 5 Free";
+content: '\f108';
+font-weight: 900;
+margin-right: 20px;
+position: relative;
+top: 1px;
+}
+
+
+  /* end design section */
