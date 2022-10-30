@@ -431,3 +431,59 @@ top: 1px;
   color: var(--main-color);
 }
   /* end portfolio section */
+
+  /* start video section */
+.video{
+  position: relative;
+}
+  .video video{
+width: 100%;
+  }
+  .video .text {
+    position: absolute;
+    background-color: var(--transparent-color);
+    top: 50%;
+    width: 100%;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 50px;
+    transform: translateY(-50%);
+  }
+.video .text h2 {
+  margin: 0 0 30px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.video .text p {
+  margin-bottom: 30px;
+}
+.video .text button {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  text-transform: uppercase;
+}
+  /* end video section */
+
+  /* start about section */
+
+  .about {
+padding-top: var(--section-padding);
+overflow: hidden;
+text-align: center;
+  }
+.about img{
+  position: relative;
+    bottom: -120px;
+    margin-top: -120px;
+    max-width: 100%
+}
+@media(max-width:768px){
+  .about img {
+    bottom: -60px;
+    margin-top: -60px;
+  }
+}
+  /* end about section */
