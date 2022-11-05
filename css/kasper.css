@@ -818,11 +818,12 @@ align-items: center;
   display: flex;
   width: 500px;
   max-width: 100%;
+  position: relative;
 }
 .subscribe form i {
   position: absolute;
   top:50%;
-  left:40px;
+  left:25px;
   transform: translateY(-50%);
 
 }
@@ -853,5 +854,15 @@ align-items: center;
 .subscribe form input[type="submit"]:hover{
   cursor: pointer;
 }
-
+@media(max-width:992px){
+  .subscribe .container {
+    flex-direction: column;
+  }
+  .subscribe p {
+    margin: 30px 0 0;
+  }
+}
+.subscribe form input[type="email"]::placeholder{
+  color: white;
+}
   /* end subscribe section */
